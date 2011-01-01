@@ -1,4 +1,4 @@
-package model;
+/*package model;
 
 import java.util.Collection;
 
@@ -44,3 +44,4 @@ public class StudentService {
        return (Collection<Student>)query.getResultList();
    }
 }
+*/

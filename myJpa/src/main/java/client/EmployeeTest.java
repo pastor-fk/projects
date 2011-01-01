@@ -8,8 +8,6 @@ import javax.persistence.Persistence;
 
 import model.Employee;
 import model.EmployeeService;
-import model.Student;
-import model.StudentService;
 
 public class EmployeeTest {
 
@@ -22,12 +20,12 @@ public class EmployeeTest {
                 
                 EntityManagerFactory ems=Persistence.createEntityManagerFactory("StudentService");
                 EntityManager es=ems.createEntityManager();
-                StudentService serv=new StudentService(es);
+               // StudentService serv=new StudentService(es);
                 
                 es.getTransaction().begin();
-                Student stud=serv.createStudent(2,"Sibisi Andile",1000);
+                //Student stud=serv.createStudent(2,"Sibisi Andile",1000);
                 es.getTransaction().commit();
-                System.out.println(" Student Persisted" +stud);
+                //System.out.println(" Student Persisted" +stud);
                 //  create and persist an employee
                 em.getTransaction().begin();
                 Employee emp = service.createEmployee(21, "Ntsikelelo Vani", 3000);
@@ -36,7 +34,7 @@ public class EmployeeTest {
                 em.getTransaction().commit();
                 System.out.println("Persisted " + emp+another+nez);
                 
-                /*// find a specific employee
+                // find a specific employee
                 emp = service.findEmployee(158);
                 System.out.println("Found " + emp);
                 
@@ -51,15 +49,15 @@ public class EmployeeTest {
                 em.getTransaction().commit();
                 System.out.println("Updated " + emp);
 
-                // remove an employee
+                /*// remove an employee
                 em.getTransaction().begin();
                 service.removeEmployee(158);
                 em.getTransaction().commit();
-                System.out.println("Removed Employee 158");        
+                System.out.println("Removed Employee 158");      */  
                 
                 // close the EM and EMF when done
                 em.close();
-                emf.close();*/
+                emf.close();
             }
 
 }
