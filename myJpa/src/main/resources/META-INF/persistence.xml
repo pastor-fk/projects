@@ -6,7 +6,10 @@
         <class>model.Employee</class>
         <validation-mode>AUTO</validation-mode>
 		<properties>
+<<<<<<< HEAD
 		
+=======
+>>>>>>> d9c4b0a50557f5938f30488d360cd36fd5fa58c0
 		<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
            <property name="hibernate.show_sql" value="false" />
 			<property name="hibernate.format_sql" value="true" />
