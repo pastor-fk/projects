@@ -4,9 +4,11 @@
 	version="2.0">
     <persistence-unit name="EmployeeService" transaction-type="JTA">
         <class>model.Employee</class>
-        <validation-mode>validate</validation-mode>
+        <validation-mode>AUTO</validation-mode>
 		<properties>
-		
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<jta-data-source>java:jboss/datasources/PracDS</jta-data-source>
+		<shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
 		
 		<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
            <property name="hibernate.show_sql" value="false" />
