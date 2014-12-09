@@ -6,10 +6,6 @@
         <class>model.Employee</class>
         <validation-mode>AUTO</validation-mode>
 		<properties>
-		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		<jta-data-source>java:jboss/datasources/PracDS</jta-data-source>
-		<shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
-		
 		<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
            <property name="hibernate.show_sql" value="false" />
 			<property name="hibernate.format_sql" value="true" />
