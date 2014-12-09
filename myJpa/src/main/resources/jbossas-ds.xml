@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources xmlns="http://www.ironjacamar.org/doc/schema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.ironjacamar.org/doc/schema
+        http://www.ironjacamar.org/doc/schema/datasources_1_0.xsd">
+	<!-- These are here so that it does not have to be added to the standalone.xml config file -->
+	<!-- <datasource enabled="true" jndi-name="jdbc/arquillian/h2"
+		pool-name="ArquillianEmbeddedH2Pool">
+		<connection-url>jdbc:h2:mem:arquillian;DB_CLOSE_DELAY=-1</connection-url>
+		<driver>h2</driver>
+	</datasource> -->
+	<datasource enabled="true" jndi-name="java:jboss/datasources/MYSQLDS"
+		pool-name="ArquillianEmbeddedH2Pool">
+		<connection-url>jdbc:mysql://localhost/pracs</connection-url>
+		<driver>mysql</driver>
+		<security>
+			<user-name>root</user-name>
+			<password></password>
+		</security>
+	</datasource>
+</datasources>
