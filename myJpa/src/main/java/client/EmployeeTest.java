@@ -24,7 +24,7 @@ public class EmployeeTest {
                 em.getTransaction().commit();
                 System.out.println("Persisted " + emp);
                 
-                // find a specific employee
+                /*// find a specific employee
                 emp = service.findEmployee(158);
                 System.out.println("Found " + emp);
                 
@@ -47,7 +47,7 @@ public class EmployeeTest {
                 
                 // close the EM and EMF when done
                 em.close();
-                emf.close();
+                emf.close();*/
             }
 
 }
