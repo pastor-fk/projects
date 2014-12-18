@@ -8,6 +8,8 @@ import javax.persistence.Persistence;
 
 import model.Employee;
 import model.EmployeeService;
+import model.Student;
+import model.StudentService;
 
 public class EmployeeTest {
 
@@ -18,11 +20,21 @@ public class EmployeeTest {
                 EntityManager em = emf.createEntityManager();
                 EmployeeService service = new EmployeeService(em);
                 
+                EntityManagerFactory ems=Persistence.createEntityManagerFactory("StudentService");
+                EntityManager es=ems.createEntityManager();
+                StudentService serv=new StudentService(es);
+                
+                es.getTransaction().begin();
+                Student stud=serv.createStudent(2,"Sibisi Andile",1000);
+                es.getTransaction().commit();
+                System.out.println(" Student Persisted" +stud);
                 //  create and persist an employee
                 em.getTransaction().begin();
-                Employee emp = service.createEmployee(158, "John Doe", 45000);
+                Employee emp = service.createEmployee(21, "Ntsikelelo Vani", 3000);
+                Employee another = service.createEmployee(31, "Ayanda Prusent", 30000);
+                Employee nez = service.createEmployee(19, "Dyantyi Billy", 40000);
                 em.getTransaction().commit();
-                System.out.println("Persisted " + emp);
+                System.out.println("Persisted " + emp+another+nez);
                 
                 /*// find a specific employee
                 emp = service.findEmployee(158);
